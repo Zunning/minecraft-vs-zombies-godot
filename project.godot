@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="minecraft-vs-zombies-godot"
+run/main_scene="uid://kg6pqelaupjr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GridManager="*uid://botgroyfcee0v"
 
 [physics]
 

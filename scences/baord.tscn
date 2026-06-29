@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://kg6pqelaupjr"]
+
+[ext_resource type="Script" uid="uid://botgroyfcee0v" path="res://scripts/grid_manager.gd" id="1_cbmjq"]
+
+[node name="baord" type="Node2D" unique_id=274421783]
+
+[node name="GridManager" type="Node2D" parent="." unique_id=620275948]
+script = ExtResource("1_cbmjq")
+
+[node name="Cells" type="Node2D" parent="." unique_id=1407610497]
