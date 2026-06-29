@@ -27,7 +27,10 @@ func get_cell(row: int, col: int) -> Dictionary:
 		return {}
 
 func is_occupied(row: int, col: int) -> bool:
-	return get_cell(row, col)["device"] != null
+	var cell = get_cell(row, col)
+	if cell.is_empty():
+		return false
+	return cell["device"] != null
 
 func place_device(row: int, col: int, device: Node) -> bool:
 	if not is_occupied(row, col):
