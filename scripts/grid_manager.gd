@@ -1,4 +1,5 @@
 extends Node
+const CELL_SIZE = 64.0
 
 const ROWS = 5
 const COLS = 9  # 根据关卡可以变
@@ -47,3 +48,14 @@ func remove_device(row: int, col: int) -> bool:
 		return true
 	else:
 		return false
+		
+func spawn_device(row: int, col: int, scene: PackedScene) -> bool:
+	if is_occupied(row, col):
+		return false
+	var device = scene.instantiate()
+	device.row = row
+	device.col = col
+	get_tree().current_scene.add_child(device)
+	device.position = Vector2(col * CELL_SIZE + CELL_SIZE / 2.0, row * CELL_SIZE + CELL_SIZE / 2.0)	
+	GridManager.place_device(row, col, device)
+	return true
